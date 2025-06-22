@@ -116,10 +116,10 @@ python app.py
 ### 4. Test the API
 ```bash
 # Health check
-curl http://localhost:8002/health
+curl http://localhost:8000/health
 
 # Analyze a stock
-curl -X POST "http://localhost:8002/analyze" \
+curl -X POST "http://localhost:8000/analyze" \
      -H "Content-Type: application/json" \
      -d '{"ticker": "AAPL"}'
 ```
@@ -353,6 +353,7 @@ LANGCHAIN_TRACING_V2=true
 ```
 financial_analysis/
 ├── app.py                           # FastAPI web server
+├── streamlit_app.py                 # WebInterface
 ├── config.py                        # API keys and configuration
 ├── workflow.py                      # LangGraph workflow orchestration
 ├── requirements.txt                 # Python dependencies
@@ -376,10 +377,10 @@ financial_analysis/
 ```bash
 python app.py
 ```
-The server runs with auto-reload enabled on `http://localhost:8002`
+The server runs with auto-reload enabled on `http://localhost:8000`
 
 ### Interactive API Documentation
-Visit `http://localhost:8002/docs` for Swagger UI documentation.
+Visit `http://localhost:8000/docs` for Swagger UI documentation.
 
 ### LangSmith Tracing
 Monitor agent execution and debug issues at [LangSmith Dashboard](https://smith.langchain.com/)
